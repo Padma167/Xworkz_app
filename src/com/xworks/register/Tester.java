@@ -11,6 +11,7 @@ public class Tester {
 		System.setProperty("webdriver.chrome.driver", "E:\\Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
 		driver.get("http://localhost:8080/xworkz-selenium/");	
 		driver.close();
 	}
