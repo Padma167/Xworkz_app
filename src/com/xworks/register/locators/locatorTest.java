@@ -5,18 +5,12 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class locatorTest {
 	
 	public static void basicLocators(WebDriver driver) 
 	{ 
-		System.setProperty("webdriver.chrome.driver", "E:\\Drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().deleteAllCookies();
-		driver.get("http://localhost:8080/xworkz-selenium/");
-		driver.manage().window().maximize();		
-     		WebElement registerlink = driver.findElement(By.className("active"));	
+		WebElement registerlink = driver.findElement(By.className("active"));	
 		registerlink.click();
 		WebElement emailtext = driver.findElement(By.id("email"));
 		emailtext.sendKeys("padma167@gmail.com");
@@ -35,6 +29,8 @@ public class locatorTest {
 		{
 			System.out.println(link.getText());
 		}
-	driver.close();	
+		
 	}
+	
+
 }
