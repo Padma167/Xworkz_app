@@ -20,6 +20,10 @@ public class locatorTest {
 		Loginlink.click();
 		WebElement Loginlink1 = driver.findElement(By.partialLinkText("Log"));
 		Loginlink1.click();
+		
+		By xpath = By.xpath("path");
+		WebElement password = driver.findElement(xpath);
+		password.sendKeys("password@123");
 		 
 		List<WebElement> alllinks = driver.findElements(By.tagName("a"));
 		

@@ -19,7 +19,10 @@ public class login {
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 		
 		List<WebElement> alllinks = driver.findElements(By.tagName("h1"));
-		String h1 [] = new String[5];
+		
+		alllinks.forEach(element -> System.out.println(element.getText()));
+		
+		String h1 [] = new String[3];
 		int i=0;
 		for(WebElement link : alllinks)
 		{
@@ -37,7 +40,8 @@ public class login {
 			System.out.println("Login is unsuccessful");
 		}
 		driver.findElement(By.linkText("Go Back")).click();
-	} catch (InterruptedException e) {
+	} catch (InterruptedException e) 
+	{
 		// TODO Auto-generated catch block
 		System.out.println("Login is unsuccessful");
 		e.printStackTrace();

@@ -24,12 +24,11 @@ public class registration {
 			Thread.sleep(1000);
 			driver.findElement(By.id("female")).click();
 			Thread.sleep(1000);
-			//html//input[@id='female']
 			driver.findElement(By.className("registerbtn")).click();
 			Thread.sleep(1000);
 			
 			List<WebElement> alllinks = driver.findElements(By.tagName("h1"));
-			String h1 [] = new String[5];
+			String h1 [] = new String[3];
 			int i=0;
 			for(WebElement link : alllinks)
 			{
@@ -52,6 +51,6 @@ public class registration {
 			// TODO Auto-generated catch block
 			System.out.println("Registration is unsuccessful");
 			e.printStackTrace();
-		}	
+		}
 	}
 }
