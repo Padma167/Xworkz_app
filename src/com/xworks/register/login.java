@@ -12,6 +12,7 @@ public class login {
 	{
 	try {
 		driver.findElement(By.linkText("Sign in")).click();
+		driver.findElement(By.xpath("//a[text()='Login']")).click();
 		driver.findElement(By.name("email")).sendKeys("test167@gmail.com");
 		Thread.sleep(1000);
 		driver.findElement(By.name("psw")).sendKeys("pwd");

@@ -33,7 +33,12 @@ public class amazonHome {
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//div[@id='nav-xshop']/a[5]")).click();
 			Thread.sleep(2000);
-		} catch (InterruptedException e) {
+			driver.findElement(By.xpath("//a[@id='nav-hamburger-menu']")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//a[@data-menu-id='6']")).click();
+			Thread.sleep(2000);
+			
+			} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
