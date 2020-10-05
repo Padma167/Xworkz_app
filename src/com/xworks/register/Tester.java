@@ -2,8 +2,7 @@ package com.xworks.register;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import com.amazon.home.amazonHome;
+import com.amazon.home.priceCompareMobilePhone;
 
 public class Tester {
 
@@ -24,16 +23,18 @@ public class Tester {
 		registration.register(driver);
 		login.login_to_xworks(driver);
 */			
-		driver.get("https://www.amazon.com/");
-		driver.manage().window().maximize();
-		
-		amazonHome.amazonHomeLocators(driver);
-		
+//		amazonHome.amazonHomeLocators(driver);
+		priceCompareMobilePhone.getPriceFromAmazon(driver);
+		System.setProperty("webdriver.chrome.driver", "E:\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		priceCompareMobilePhone.getPriceFromFlipkart(driver);
+		priceCompareMobilePhone.priceComparision();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
-			driver.close();
+			//driver.close();
 		}
 	
 }
