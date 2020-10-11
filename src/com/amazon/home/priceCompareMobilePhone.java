@@ -5,16 +5,16 @@ import org.openqa.selenium.WebDriver;
 
 public class priceCompareMobilePhone {
 	public static int Avalue = 0;
-	public static int Fvalue = 0;
+	public static int Fvalue = 0;     
 
 	public static void getPriceFromAmazon(WebDriver driver)
 	{
-		
 		try {
 			driver.get("https://www.amazon.in/");
 			driver.manage().window().maximize();
 			driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("samsung note 10 lite\n");
 			Thread.sleep(2000);
+			//a[contains(@href, '/Apple-iPhone-11-64GB-White/dp/B07XVMCLP7/ref=sr_1_1?crid=3EX9XQX6HZVLT&dchild=1&keywords=apple+iphone+11+64gb+-+white&qid=1602310833&sprefix=apple+iphone+11+64gb+%2Caps%2C967&sr=8-1')]//span[@class='a-price']//span[@class='a-price-whole']
 			String winHandleBefore = driver.getWindowHandle();
 			driver.findElement(By.xpath("//span[starts-with(text(),'Samsung Galaxy Note10 Lite (Aura Glow, 8GB RAM, 128GB Storage)')]")).click();
 			Thread.sleep(2000);
@@ -24,10 +24,8 @@ public class priceCompareMobilePhone {
 			String price = driver.findElement(By.xpath("//span[@id='priceblock_ourprice']")).getText();
 			Thread.sleep(2000);
 			
-			System.out.println("Price:"+price);
 			Avalue = Integer.parseInt(price.replaceAll("[^0-9]", ""));
 			Avalue= Avalue/100;
-			System.out.println("Price:"+Avalue);
 			driver.close();
 			driver.switchTo().window(winHandleBefore);
 			driver.close();
@@ -55,9 +53,8 @@ public class priceCompareMobilePhone {
 			    driver.switchTo().window(winHandle);}
 			String price = driver.findElement(By.xpath("//div[@class='_1vC4OE _3qQ9m1']")).getText();
 			Thread.sleep(2000);
-			System.out.println("Price:"+price);
+			
 			Fvalue = Integer.parseInt(price.replaceAll("[^0-9]", ""));
-			System.out.println("Price:"+Fvalue);
 			driver.close();
 			driver.switchTo().window(winHandleBefore);	
 			driver.close();
@@ -69,6 +66,7 @@ public class priceCompareMobilePhone {
 	
 	public static void priceComparision()
 	{
+		
 		if(Avalue>Fvalue)
 			System.out.println("Price in Flipkat("+Fvalue+")is cheaper than price in Amazon("+Avalue+") for the selected phone");
 		else if(Fvalue>Avalue)

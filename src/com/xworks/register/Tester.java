@@ -1,8 +1,12 @@
 package com.xworks.register;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
 import com.amazon.home.priceCompareMobilePhone;
+import com.facebook.signup.signup;
 
 public class Tester {
 
@@ -15,15 +19,22 @@ public class Tester {
 	//Alt+shift+m
 //	windowProperties.windowproperties(driver);
 //	locatorTest.basicLocators(driver);
-		try {
 		System.setProperty("webdriver.chrome.driver", "E:\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
-/*		driver.get("http://localhost:8080/xworkz-selenium/");
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+		signup.signupFacebook(driver);
+		
+		/*		driver.get("http://localhost:8080/xworkz-selenium/");
 		registration.register(driver);
 		login.login_to_xworks(driver);
-*/			
-//		amazonHome.amazonHomeLocators(driver);
+		amazonHome.amazonHomeLocators(driver);*/
+	/*	try {
+		System.setProperty("webdriver.chrome.driver", "E:\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
+
 		priceCompareMobilePhone.getPriceFromAmazon(driver);
 		System.setProperty("webdriver.chrome.driver", "E:\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -36,6 +47,7 @@ public class Tester {
 		}finally{
 			//driver.close();
 		}
+	*/	driver.close();
 	
 }
 }
