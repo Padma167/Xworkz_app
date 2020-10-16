@@ -6,7 +6,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import com.amazon.home.priceCompareMobilePhone;
+import com.cleartrip.book.cleartripHome;
 import com.facebook.signup.signup;
+import com.magento.website.magentologout;
+import com.magento.website.magentoLinks;
+import com.magento.website.magentologin;
 
 public class Tester {
 
@@ -22,9 +26,13 @@ public class Tester {
 		System.setProperty("webdriver.chrome.driver", "E:\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
-		driver.get("https://www.facebook.com/");
-		driver.manage().window().maximize();
-		signup.signupFacebook(driver);
+//		driver.get("https://www.facebook.com/");
+//		driver.manage().window().maximize();
+//		signup.signupFacebook(driver);
+//		magentologin.login_to_magento(driver);
+//		magentologout.logout_from_magento(driver);
+//		magentoLinks.magento_find_links(driver);
+		cleartripHome.cleartripBooking(driver);
 		
 		/*		driver.get("http://localhost:8080/xworkz-selenium/");
 		registration.register(driver);
