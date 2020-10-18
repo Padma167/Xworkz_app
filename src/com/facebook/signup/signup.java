@@ -9,7 +9,8 @@ public class signup {
 	public static void signupFacebook(WebDriver driver) {
 		try {
 			Thread.sleep(3000);
-	
+			driver.get("https://www.facebook.com/");
+			driver.manage().window().maximize();
 		driver.findElement(By.xpath("//a[@id='u_0_2']")).click();
 		driver.get("https://m.facebook.com/reg/");
 		driver.findElement(By.xpath("//input[@id='firstname_input']")).sendKeys("test");

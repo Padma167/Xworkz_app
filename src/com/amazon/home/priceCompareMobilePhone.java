@@ -28,7 +28,7 @@ public class priceCompareMobilePhone {
 			Avalue= Avalue/100;
 			driver.close();
 			driver.switchTo().window(winHandleBefore);
-			driver.close();
+			//driver.close();
 			//img[contains(@src,'519UN3SlJWL')]
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

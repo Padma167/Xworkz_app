@@ -1,12 +1,20 @@
 package com.amazon.home;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class amazonHome {
 	public static void amazonHomeLocators(WebDriver driver)
 	{
 		try {
+			String script = "scrollBy(526,649)";
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+			js.executeScript(script);
+			WebElement seemore = driver.findElement(By.className("seemore xpath"));
+			js.executeScript("argument[0].scrollIntoView(true)", seemore);
+			js.executeScript("argument[0].click()", seemore);
 			driver.findElement(By.xpath("//a[@id='nav-hamburger-menu']")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//a[@data-menu-id='5']")).click();

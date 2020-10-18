@@ -13,6 +13,8 @@ public class registration {
 	public static void register(WebDriver driver)
 	{
 		try {	
+					driver.get("http://localhost:8080/xworkz-selenium/");
+					driver.manage().window().maximize();
 			driver.findElement(By.className("active")).click();
 			Thread.sleep(1000);
 			if(driver.findElement(By.id("email")).isEnabled())
